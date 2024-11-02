@@ -8,26 +8,28 @@ main:
 	syscall
 	add $9, $0, $2
 	
-	beq $8, $9, iguais 
 	slt $10, $8, $9
-	# Para maior é:($Entrada1, $Entrada2$)
-	# Para menor é:($Entrada2, $Entrada1$)
-	beq $10, $0, segundo
+	beq $10, $0, primeiro
 	add $4, $0, $8
 	addi $2, $0, 1
 	syscall
-	j fim
-segundo:
+	add $4, $0, '<'
+	addi $2, $0, 11
+	syscall
 	add $4, $0, $9
 	addi $2, $0, 1
 	syscall
 	j fim
-iguais:
-	add $4, $0, '='
+primeiro:
+	add $4, $0, $8
+	addi $2, $0, 1
+	syscall
+	add $4, $0, '>'
 	addi $2, $0, 11
 	syscall
-	j fim
+	add $4, $0, $9
+	addi $2, $0, 1
+	syscall
 fim:
 	addi $2, $0, 10
 	syscall
-	
