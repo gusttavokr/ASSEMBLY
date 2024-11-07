@@ -5,16 +5,24 @@ main:
 	add $8, $0, $2
 	
 	addi $9, $0, 4
-	div $8, $9
-	mfhi $10
+	addi $10, $0, 100
 	
-	bne $10, $0, não_bi
-	add $4, $0, 'b'
+	div $8, $9
+	mfhi $11
+	beq $11, $0, continue
+	j nao
+continue:
+	div $8, $10
+	mfhi $12
+	bne $12, $0, sim
+nao:
+	add $4, $0, 'n'
 	j print
-não_bi:
-	addi $4, $0, 'n'
+sim: 
+	add $4, $0, 'B'
 print:
 	addi $2, $0, 11
 	syscall
 	addi $2, $0, 10
 	syscall
+	
