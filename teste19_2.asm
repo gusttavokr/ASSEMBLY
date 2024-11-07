@@ -5,7 +5,8 @@ main:
 	add $8, $0, $2
 	
 	addi $9, $0, 10
-	
+	addi $19, $0, 1
+
 	div $8, $9
 	mflo $10
 	mfhi $11 # ultimo bit
@@ -13,7 +14,6 @@ main:
 	mul $11, $0, $11
 	j próximo
 viraUm:
-	addi $19, $0, 1
 	add $11, $11, $19
 
 próximo:
@@ -86,27 +86,18 @@ próximo7:
 virado8:
 	add $18, $18, $19
 somando:
-	add $4, $0, $18
-	addi $2, $0, 1
-	syscall
-	add $4, $0, $17
-	addi $2, $0, 1
-	syscall
-	add $4, $0, $16
-	addi $2, $0, 1
-	syscall
-	add $4, $0, $15
-	addi $2, $0, 1
-	syscall
-	add $4, $0, $14
-	addi $2, $0, 1
-	syscall
-	add $4, $0, $13
-	addi $2, $0, 1
-	syscall
-	add $4, $0, $12
-	addi $2, $0, 1
-	syscall
-	add $4, $0, $11
-	addi $2, $0, 1
-	syscall
+	addi $2, $0, 10000000
+	mul $18, $18, $2
+	addi $2, $0, 1000000
+	mul $17, $17, $2
+	addi $2, $0, 100000
+	mul $18, $18, $2
+	addi $2, $0, 10000
+	mul $18, $18, $2
+	addi $2, $0, 1000
+	mul $18, $18, $2
+	addi $2, $0, 100
+	mul $18, $18, $2
+	addi $2, $0, 10
+	mul $18, $18, $2
+	
