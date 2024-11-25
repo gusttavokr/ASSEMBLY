@@ -30,7 +30,7 @@ main:
 	
 	addi $8, $0, 7 # Primeiro 
 	addi $9, $0, 1 # Segundo
-	addi $10, $0, 10 # Limite por coluna
+	addi $10, $0, 11 # Limite por coluna
 	addi $11, $0, 10 # Limite por linha
 	
 	jal Funcao3
