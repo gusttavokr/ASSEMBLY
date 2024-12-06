@@ -11,7 +11,7 @@ teste:
 	beq $20, $0, teste2
 	
 	sw $9, 0($8)
-	sw $9, 1924($8)
+	sw $9, 1920($8)
 	addi $8, $8, 4
 	addi $20, $20, -1
 	j teste
